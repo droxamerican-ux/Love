@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --color-love-pink: #ff4d6d;
+  --color-love-dark: #590d22;
+  --color-love-red: #a4133c;
+}
+
+@layer base {
+  body {
+    @apply bg-love-dark text-white overflow-hidden antialiased;
+    font-family: "Cairo", sans-serif;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(110vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+
+.heart-particle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  animation: float linear infinite;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
